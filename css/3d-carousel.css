@@ -1,0 +1,200 @@
+/* 3D Carousel Styles */
+.carousel-3d-container {
+  position: relative;
+  margin: 0 auto;
+  height: calc(100vh - var(--header-h) - var(--footer-h) - 4rem - 100px);
+  min-height: 350px;
+  max-height: 600px;
+  width: 100%;
+  perspective: 1200px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.carousel-3d-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-3d-item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 65%;
+  max-width: 450px;
+  height: auto;
+  max-height: calc(100vh - var(--header-h) - var(--footer-h) - 8rem);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-out;
+  transform-origin: center;
+  visibility: visible;
+  backface-visibility: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  will-change: transform, opacity; /* Performance optimization */
+}
+
+.carousel-3d-item.active {
+  z-index: 10;
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-3d-item.left,
+.carousel-3d-item.right {
+  z-index: 5;
+  opacity: 0.75;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.carousel-3d-item.left {
+  transform: translateX(-42%) translateZ(-80px) rotateY(20deg) scale(0.85);
+}
+
+.carousel-3d-item.left:hover {
+  transform: translateX(-40%) translateZ(-60px) rotateY(15deg) scale(0.88);
+  opacity: 0.9;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 6; /* Slight z-index increase on hover */
+}
+
+.carousel-3d-item.right {
+  transform: translateX(42%) translateZ(-80px) rotateY(-20deg) scale(0.85);
+}
+
+.carousel-3d-item.right:hover {
+  transform: translateX(40%) translateZ(-60px) rotateY(-15deg) scale(0.88);
+  opacity: 0.9;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 6; /* Slight z-index increase on hover */
+}
+
+.carousel-3d-item.back-left,
+.carousel-3d-item.back-right {
+  z-index: 1;
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.carousel-3d-item.back-left {
+  transform: translateX(-60%) translateZ(-120px) rotateY(20deg) scale(0.75);
+}
+
+.carousel-3d-item.back-left:hover {
+  transform: translateX(-58%) translateZ(-100px) rotateY(15deg) scale(0.77);
+  opacity: 0.5;
+}
+
+.carousel-3d-item.back-right {
+  transform: translateX(60%) translateZ(-120px) rotateY(-20deg) scale(0.75);
+}
+
+.carousel-3d-item.back-right:hover {
+  transform: translateX(58%) translateZ(-100px) rotateY(-15deg) scale(0.77);
+  opacity: 0.5;
+}
+
+.carousel-3d-item.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Controls - hidden as per request */
+.carousel-3d-controls {
+  display: none;
+}
+
+.carousel-3d-prev,
+.carousel-3d-next {
+  display: none;
+}
+
+/* Dots/Indicators */
+.carousel-3d-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+  position: relative;
+  z-index: 100;
+  height: 20px;
+}
+
+.carousel-3d-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel-3d-dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(137, 207, 240, 0.6);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .carousel-3d-container {
+    height: 500px;
+  }
+  
+  .carousel-3d-item {
+    width: 85%;
+  }
+  
+  .carousel-3d-item.left {
+    transform: translateX(-35%) translateZ(-150px) rotateY(20deg) scale(0.8);
+  }
+  
+  .carousel-3d-item.right {
+    transform: translateX(35%) translateZ(-150px) rotateY(-20deg) scale(0.8);
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-3d-container {
+    height: 450px;
+  }
+  
+  .carousel-3d-item {
+    width: 90%;
+  }
+  
+  .carousel-3d-item.left,
+  .carousel-3d-item.right {
+    transform: translateZ(-100px) scale(0.85);
+    opacity: 0.5;
+  }
+  
+  .carousel-3d-item.back-left,
+  .carousel-3d-item.back-right {
+    display: none;
+  }
+}
+
+/* Animation for transitions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

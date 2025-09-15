@@ -1,0 +1,2 @@
+# No Python dependencies required for this project.
+# This is a static website (HTML, CSS, JS) and can be served by any static host.
