@@ -1,3 +1,7 @@
+/*
+  Sampriti Portfolio Stylesheet (single source of truth)
+  All global and responsive styles live here. Legacy files are unused and left empty for clarity.
+*/
 /* Global Variables */
 :root {
   --primary: #89CFF0;
@@ -607,6 +611,13 @@ main {
   transition: all var(--transition-fast);
 }
 
+@media (max-width: 576px) {
+  .social-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .social-btn:hover {
   transform: translateY(-3px);
 }
@@ -729,6 +740,15 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .cert-image {
@@ -1004,8 +1024,8 @@ main {
   }
   
   .carousel-3d-item {
-    width: 80%;
-    left: 10%;
+    width: 84%;
+    left: 8%;
   }
   
   /* removed .project-image (unused) */
@@ -1015,23 +1035,69 @@ main {
     height: 160px;
     padding: 6px;
   }
+  
+  /* Adjust cert-card sizing for medium screens */
+  .cert-card {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-  .carousel-3d-container {
-    height: 400px;
-  }
+  .carousel-3d-container { height: 520px; }
   
-  .carousel-3d-item {
-    width: 90%;
-    left: 5%;
-  }
+  /* Center active card with comfortable gutters */
+  .carousel-3d-item { width: 88%; left: 6%; right: 6%; height: 90%; top: 5%; }
+  /* Flatten side cards to avoid overlap and overflow on phones */
+  .carousel-3d-item.active { transform: none !important; }
+  .carousel-3d-item.left,
+  .carousel-3d-item.right { transform: translateX(0) scale(0.95) !important; opacity: 0.75; }
+  .carousel-3d-item.back { opacity: 0; pointer-events: none; }
   
   /* removed .project-image and .project-content h3 (unused) */
 
   /* Further reduce image height on small screens */
-  .cert-image {
-    height: 140px;
-    padding: 6px;
+  .cert-image { height: 130px; padding: 6px; }
+  
+  /* Adjust cert-card for small screens */
+  .cert-card {
+    max-width: 100%;
   }
+  
+  /* Improve cert-content spacing on mobile */
+  .cert-content { padding: 12px; max-width: 62ch; margin: 0 auto; }
+  
+  /* Make sure text is properly sized on small screens */
+  .cert-content h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cert-content p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  /* Stack title row to avoid collisions with GitHub button */
+  .project-title-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .project-github-btn { padding: 6px 12px; font-size: 0.9rem; }
+
+  /* Smaller arrows so they don't dominate */
+  .carousel-control { font-size: 1.3rem; padding: 6px 10px; }
+
+  /* Move paper popup to bottom so it doesn't cover headings */
+  .paper-popup { top: auto; bottom: 10px; left: 10px; right: 10px; transform: none; font-size: 0.9rem; padding: 6px 10px; }
+}
+
+/* Very small phones */
+@media (max-width: 576px) {
+  .carousel-3d-container { height: 560px; }
+  .cert-image { height: 120px; }
+  /* Hide popup entirely on very small screens */
+  .paper-popup { display: none !important; }
+}
+
+/* Media safety and overflow guards (mobile/tablet only) */
+@media (max-width: 992px) {
+  img, svg, video, canvas { max-width: 100%; height: auto; }
+  html, body { overflow-x: hidden; }
 }
