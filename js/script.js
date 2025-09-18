@@ -14,6 +14,8 @@
   });
 })();
 
+// Mobile nav toggle removed per request; header/nav now wraps naturally
+
 // Intersection Observer for fade-in and slide-up animations
 (function observeInView() {
   const els = document.querySelectorAll('.fade-in');

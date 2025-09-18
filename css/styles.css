@@ -312,6 +312,7 @@ main {
   
   .main-nav {
     gap: 8px;
+    flex-wrap: wrap; /* allow nav to wrap on small screens */
   }
   
   .nav-link {
@@ -323,22 +324,38 @@ main {
     width: 140px;
     height: 140px;
   }
+
+  /* Header can grow if nav wraps */
+  .site-header { height: auto; padding: 6px 12px; align-items: flex-start; }
+  /* Give extra top padding to clear the fixed header when it wraps */
+  .container { padding-top: calc(var(--header-h) + 64px); }
+  /* Full-height pages (Projects/Experience/Qualifications): reduce top spacing under header */
+  .container.full-height { padding-top: calc(var(--header-h) + 32px); }
+  /* Tighten carousel spacing on mobile so cards sit closer to header */
+  .projects-carousel, .experience-carousel { margin: 6px 0 44px; }
+  /* Qualifications: reduce space below header and between sections */
+  .qualifications-grid { gap: 0; margin-top: 0; }
+  .qualifications-grid br { display: none; } /* hide manual line breaks on mobile */
+  .qualifications-grid .carousel-3d-container { margin: 2px 0 8px; }
 }
 
 @media (max-width: 576px) {
-  /* Keep nav visible on mobile and allow wrapping */
-  .main-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
+  /* Mobile: allow wrapping and more space below header */
+  .main-nav { flex-wrap: wrap; gap: 8px; }
+  .site-header { height: auto; padding: 8px 12px; align-items: flex-start; }
+  .container { padding-top: calc(var(--header-h) + 100px); }
+  /* Full-height pages (Projects/Experience/Qualifications): reduce top spacing further on very small phones */
+  .container.full-height { padding-top: calc(var(--header-h) + 60px); }
+  .projects-carousel, .experience-carousel { margin: 4px 0 40px; }
+  .qualifications-grid { gap: 0; margin-top: 0; }
+  .qualifications-grid .carousel-3d-container { margin: 0 0 6px; }
 }
 
 /* 3D Carousel Component */
 .carousel-3d-container {
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 520px;
   perspective: 1200px;
   /* extra bottom margin to give space for controls placed below */
   margin: 20px 0 60px; /* controls now on sides, less bottom space needed */
@@ -479,6 +496,28 @@ main {
   .qualifications-extra .carousel-next { margin-right: -4px; }
 }
 
+/* Projects & Experience: push arrows further to the sides (avoid covering content) */
+.projects-carousel .carousel-controls,
+.experience-carousel .carousel-controls { padding: 0; }
+.projects-carousel .carousel-prev,
+.experience-carousel .carousel-prev { margin-left: -130px; }
+.projects-carousel .carousel-next,
+.experience-carousel .carousel-next { margin-right: -130px; }
+@media (max-width: 992px) {
+  .projects-carousel .carousel-prev,
+  .experience-carousel .carousel-prev { margin-left: -8px; }
+  .projects-carousel .carousel-next,
+  .experience-carousel .carousel-next { margin-right: -8px; }
+}
+@media (max-width: 768px) {
+  .projects-carousel .carousel-prev,
+  .experience-carousel .carousel-prev { margin-left: -4px; }
+  .projects-carousel .carousel-next,
+  .experience-carousel .carousel-next { margin-right: -4px; }
+  .projects-carousel .carousel-control,
+  .experience-carousel .carousel-control { font-size: 1.2rem; padding: 4px 8px; }
+}
+
 /* Small left-side popup for projects indicating a published paper */
 .paper-popup {
   position: absolute;
@@ -517,7 +556,7 @@ main {
 @media (max-width: 768px) {
   .paper-popup {
     top: auto;
-    bottom: 10px;
+    bottom: 12px;
     left: 10px;
     right: 10px;
     transform: translateY(10px);
@@ -537,6 +576,7 @@ main {
   padding: 40px;
   text-align: center;
   max-width: 600px;
+  width: min(600px, 92vw);
   margin: 0 auto;
 }
 
@@ -558,6 +598,7 @@ main {
   align-items: center;
   gap: 20px;
   text-align: left;
+  flex-wrap: wrap; /* allow stacking on small widths */
 }
 
 .contact-icon {
@@ -581,12 +622,16 @@ main {
 .contact-details p {
   font-weight: 500;
   font-size: 1.1rem;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .contact-details a {
   color: var(--text);
   text-decoration: none;
   transition: color var(--transition-fast);
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .contact-details a:hover {
@@ -612,10 +657,12 @@ main {
 }
 
 @media (max-width: 576px) {
-  .social-btn {
-    width: 100%;
-    justify-content: center;
-  }
+  .social-btn { width: 100%; justify-content: center; }
+  .contact-card { width: 94vw; }
+  .contact-card h1 { font-size: 1.6rem; }
+  .contact-item { gap: 12px; }
+  .contact-icon { width: 40px; height: 40px; font-size: 18px; }
+  .contact-details p { font-size: 1rem; }
 }
 
 .social-btn:hover {
@@ -689,6 +736,7 @@ main {
   margin-bottom: 20px;
   color: #333;
   text-align: center;
+  margin-top: 0; /* avoid extra space before heading when stacked */
 }
 
 .cert-carousel,
@@ -697,24 +745,25 @@ main {
 }
 
 /* Page-specific carousel heights for better text fit */
-.projects-carousel { height: 520px; }
-.experience-carousel { height: 500px; }
+.projects-carousel { height: 600px; }
+.experience-carousel { height: 560px; }
 
 @media (max-width: 992px) {
-  .projects-carousel { height: 500px; }
-  .experience-carousel { height: 500px; }
+  .projects-carousel { height: 580px; }
+  .experience-carousel { height: 540px; }
   /* Mobile/Tablet: switch to single-column grid for better readability */
   .qualifications-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px;
-    margin-top: 24px;
+    gap: 16px; /* tighten spacing between Certifications and Leadership */
+    margin-top: 16px;
   }
 }
 
 @media (max-width: 768px) {
-  .projects-carousel { height: 460px; }
-  .experience-carousel { height: 460px; }
+  .projects-carousel { height: 560px; }
+  .experience-carousel { height: 520px; }
+  .qualifications-grid { gap: 16px; }
 }
 
 /* Make the Experience slides slightly taller and free more space for text */
@@ -825,7 +874,7 @@ main {
 @media (max-width: 992px) {
   .qualifications-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 16px;
   }
   
   .cert-carousel,
@@ -834,11 +883,52 @@ main {
   }
 }
 
+/* Tablet-specific tuning (between mobile and desktop) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Allow header/nav to wrap gracefully and avoid content overlap */
+  .main-nav { flex-wrap: wrap; gap: 10px; }
+  .site-header { height: auto; padding: 8px 16px; align-items: flex-start; }
+  .container { padding-top: calc(var(--header-h) + 40px); }
+  .container.full-height { padding-top: calc(var(--header-h) + 24px); }
+
+  /* Slightly tighten spacing to fit tablet viewport */
+  .projects-carousel, .experience-carousel { margin: 8px 0 48px; }
+  .qualifications-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
+  .qualifications-grid .carousel-3d-container { margin: 6px 0 16px; }
+
+  /* Keep arrows inside the viewport edges on tablets */
+  .projects-carousel .carousel-prev,
+  .experience-carousel .carousel-prev,
+  .qualifications-carousel .carousel-prev,
+  .qualifications-extra .carousel-prev { margin-left: -8px; }
+  .projects-carousel .carousel-next,
+  .experience-carousel .carousel-next,
+  .qualifications-carousel .carousel-next,
+  .qualifications-extra .carousel-next { margin-right: -8px; }
+
+  /* Fix iPad/iOS scroll freeze caused by background-attachment: fixed */
+  body { background-attachment: scroll; -webkit-overflow-scrolling: touch; }
+
+  /* Move publication popup to bottom on tablets so it doesn't cover headings */
+  .paper-popup { top: auto; bottom: 12px; left: 12px; right: 12px; transform: none; border-radius: 8px; justify-content: center; }
+}
+
 /* Increase width of carousels on Qualifications page */
 .qualifications-carousel .carousel-3d-item,
 .qualifications-extra .carousel-3d-item {
   width: 70%;
   left: 15%;
+}
+
+/* Tighten spacing between Certifications and Leadership when stacked */
+@media (max-width: 992px) {
+  .qualifications-grid .carousel-3d-container { margin: 8px 0 20px; }
+}
+@media (max-width: 768px) {
+  .qualifications-grid .carousel-3d-container { margin: 4px 0 12px; }
+}
+@media (max-width: 576px) {
+  .qualifications-grid .carousel-3d-container { margin: 2px 0 10px; }
 }
 
 /* Qualifications page specific heights to fit content better */
@@ -1019,44 +1109,28 @@ main {
 
 /* Make carousel responsive */
 @media (max-width: 992px) {
-  .carousel-3d-container {
-    height: 450px;
-  }
-  
-  .carousel-3d-item {
-    width: 84%;
-    left: 8%;
-  }
-  
-  /* removed .project-image (unused) */
-
-  /* Slightly reduce image height on medium screens to avoid scaling up */
-  .cert-image {
-    height: 160px;
-    padding: 6px;
-  }
-  
-  /* Adjust cert-card sizing for medium screens */
-  .cert-card {
-    max-width: 100%;
-  }
+  .carousel-3d-container { height: 560px; }
+  .carousel-3d-item { width: 90%; left: 5%; }
+  /* Slightly reduce image height on medium/smaller screens to free text space */
+  .cert-image { height: 150px; padding: 6px; }
+  .cert-card { max-width: 100%; }
 }
 
 @media (max-width: 768px) {
-  .carousel-3d-container { height: 520px; }
+  .carousel-3d-container { height: 620px; }
   
   /* Center active card with comfortable gutters */
-  .carousel-3d-item { width: 88%; left: 6%; right: 6%; height: 90%; top: 5%; }
+  .carousel-3d-item { width: 96%; left: 2%; right: 2%; height: 94%; top: 3%; }
   /* Flatten side cards to avoid overlap and overflow on phones */
   .carousel-3d-item.active { transform: none !important; }
   .carousel-3d-item.left,
-  .carousel-3d-item.right { transform: translateX(0) scale(0.95) !important; opacity: 0.75; }
+  .carousel-3d-item.right { transform: translateX(0) scale(0.97) !important; opacity: 0.85; }
   .carousel-3d-item.back { opacity: 0; pointer-events: none; }
   
   /* removed .project-image and .project-content h3 (unused) */
 
   /* Further reduce image height on small screens */
-  .cert-image { height: 130px; padding: 6px; }
+  .cert-image { height: 120px; padding: 6px; }
   
   /* Adjust cert-card for small screens */
   .cert-card {
@@ -1085,15 +1159,24 @@ main {
   .carousel-control { font-size: 1.3rem; padding: 6px 10px; }
 
   /* Move paper popup to bottom so it doesn't cover headings */
-  .paper-popup { top: auto; bottom: 10px; left: 10px; right: 10px; transform: none; font-size: 0.9rem; padding: 6px 10px; }
+  .paper-popup { top: auto; bottom: 12px; left: 10px; right: 10px; transform: none; font-size: 0.9rem; padding: 6px 10px; }
 }
 
 /* Very small phones */
 @media (max-width: 576px) {
-  .carousel-3d-container { height: 560px; }
-  .cert-image { height: 120px; }
-  /* Hide popup entirely on very small screens */
-  .paper-popup { display: none !important; }
+  .carousel-3d-container { height: 680px; }
+  .cert-image { height: 110px; }
+  /* Keep publication popup visible on very small screens */
+  .paper-popup {
+    display: flex !important;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 12px;
+    transform: none;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
 }
 
 /* Media safety and overflow guards (mobile/tablet only) */
@@ -1101,3 +1184,14 @@ main {
   img, svg, video, canvas { max-width: 100%; height: auto; }
   html, body { overflow-x: hidden; }
 }
+
+/* Ensure scroll works on tablets/phones (iOS fixed background quirk) */
+@media (max-width: 1024px) {
+  body { background-attachment: scroll; -webkit-overflow-scrolling: touch; }
+  /* Use dynamic viewport height to avoid iOS URL bar jump and scroll lock */
+  .content-fit,
+  .full-height { min-height: calc(100dvh - var(--header-h) - var(--footer-h)); }
+}
+
+/* Utility: lock page scroll when overlays/menus are open */
+html.no-scroll, body.no-scroll { overflow: hidden; }
