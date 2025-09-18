@@ -556,7 +556,7 @@ main {
 @media (max-width: 768px) {
   .paper-popup {
     top: auto;
-    bottom: 12px;
+    bottom: 8px;
     left: 10px;
     right: 10px;
     transform: translateY(10px);
@@ -1183,14 +1183,6 @@ main {
 @media (max-width: 992px) {
   img, svg, video, canvas { max-width: 100%; height: auto; }
   html, body { overflow-x: hidden; }
-}
-
-/* Ensure scroll works on tablets/phones (iOS fixed background quirk) */
-@media (max-width: 1024px) {
-  body { background-attachment: scroll; -webkit-overflow-scrolling: touch; }
-  /* Use dynamic viewport height to avoid iOS URL bar jump and scroll lock */
-  .content-fit,
-  .full-height { min-height: calc(100dvh - var(--header-h) - var(--footer-h)); }
 }
 
 /* Utility: lock page scroll when overlays/menus are open */
