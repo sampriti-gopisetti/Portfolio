@@ -562,6 +562,8 @@ main {
     transform: translateY(10px);
     border-radius: 8px;
     justify-content: center;
+    font-size: 0.9rem;
+    padding: 6px 10px;
   }
   .paper-popup.show {
     transform: translateY(0);
@@ -758,12 +760,16 @@ main {
     gap: 16px; /* tighten spacing between Certifications and Leadership */
     margin-top: 16px;
   }
+  /* Consolidated here to avoid duplicate definitions later */
+  .cert-carousel,
+  .extra-carousel {
+    height: 350px;
+  }
 }
 
 @media (max-width: 768px) {
   .projects-carousel { height: 560px; }
   .experience-carousel { height: 520px; }
-  .qualifications-grid { gap: 16px; }
 }
 
 /* Make the Experience slides slightly taller and free more space for text */
@@ -871,17 +877,7 @@ main {
   outline: none;
 }
 
-@media (max-width: 992px) {
-  .qualifications-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  
-  .cert-carousel,
-  .extra-carousel {
-    height: 350px;
-  }
-}
+/* (Removed duplicate @media ≤992px qualifications grid & heights block) */
 
 /* Tablet-specific tuning (between mobile and desktop) */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -920,16 +916,8 @@ main {
   left: 15%;
 }
 
-/* Tighten spacing between Certifications and Leadership when stacked */
-@media (max-width: 992px) {
-  .qualifications-grid .carousel-3d-container { margin: 8px 0 20px; }
-}
-@media (max-width: 768px) {
-  .qualifications-grid .carousel-3d-container { margin: 4px 0 12px; }
-}
-@media (max-width: 576px) {
-  .qualifications-grid .carousel-3d-container { margin: 2px 0 10px; }
-}
+/* (Removed duplicate margin adjustments for .qualifications-grid .carousel-3d-container
+   to avoid conflicts with earlier mobile rules setting tighter margins) */
 
 /* Qualifications page specific heights to fit content better */
 .qualifications-carousel { height: 450px; }
@@ -1158,8 +1146,7 @@ main {
   /* Smaller arrows so they don't dominate */
   .carousel-control { font-size: 1.3rem; padding: 6px 10px; }
 
-  /* Move paper popup to bottom so it doesn't cover headings */
-  .paper-popup { top: auto; bottom: 12px; left: 10px; right: 10px; transform: none; font-size: 0.9rem; padding: 6px 10px; }
+  /* (Removed duplicate .paper-popup rule to avoid conflicting transforms/padding) */
 }
 
 /* Very small phones */
