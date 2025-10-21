@@ -218,4 +218,61 @@ document.addEventListener('DOMContentLoaded', function() {
   carousels.forEach(container => {
     new Carousel3D(container);
   });
+  
+  // Initialize resume modal functionality
+  initResumeModal();
 });
+
+/**
+ * Resume Selection Modal
+ */
+function initResumeModal() {
+  const modal = document.getElementById('resumeModal');
+  const resumeBtn = document.getElementById('resumeBtn');
+  const closeBtn = document.querySelector('.close-modal');
+  
+  // Only run if modal elements exist (on contact page)
+  if (!modal || !resumeBtn) return;
+  
+  // Open modal when resume button is clicked
+  resumeBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    modal.classList.add('show');
+    document.body.classList.add('no-scroll');
+  });
+  
+  // Close modal when X is clicked
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      modal.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+    });
+  }
+  
+  // Close modal when clicking outside the modal content
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+    }
+  });
+  
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      modal.classList.remove('show');
+      document.body.classList.remove('no-scroll');
+    }
+  });
+  
+  // Close modal when a resume option is clicked
+  const resumeOptions = document.querySelectorAll('.resume-option-btn');
+  resumeOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      setTimeout(() => {
+        modal.classList.remove('show');
+        document.body.classList.remove('no-scroll');
+      }, 300);
+    });
+  });
+}

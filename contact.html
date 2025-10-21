@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/resume-modal.css" />
   </head>
   <body>
     <header class="site-header">
@@ -73,7 +74,7 @@
                 <i class="fa-brands fa-github"></i>
                 <span>GitHub</span>
               </a>
-              <a href="assets/SampritiGopisetti%20-%20Job%20-%20Resume.pdf" target="_blank" class="social-btn resume">
+              <a href="assets/Sampriti_Gopisetti_SWE.pdf" target="_blank" rel="noopener" id="resumeBtn" class="social-btn resume">
                 <i class="fa fa-file-pdf"></i>
                 <span>Resume</span>
               </a>
@@ -82,6 +83,25 @@
         </section>
       </div>
     </main>
+
+    <!-- Resume Selection Modal -->
+    <div id="resumeModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Select Resume Type</h2>
+        <p>Choose the resume you'd like to view:</p>
+        <div class="resume-options">
+          <a href="assets/Sampriti_Gopisetti_SWE.pdf" target="_blank" class="resume-option-btn swe">
+            <i class="fa-solid fa-code"></i>
+            <span>Software Engineering</span>
+          </a>
+          <a href="assets/Sampriti_Gopisetti_AIML.pdf" target="_blank" class="resume-option-btn aiml">
+            <i class="fa-solid fa-brain"></i>
+            <span>AI/ML Engineering</span>
+          </a>
+        </div>
+      </div>
+    </div>
     
     <footer class="site-footer">
       <div class="footer-content">
