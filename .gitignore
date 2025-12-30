@@ -1,0 +1,16 @@
+# OS/filesystem cruft
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+
+# Env/config
+.env
+
+# Build outputs (if added later)
+dist/
+build/
+
+# Node (if used later)
+node_modules/
