@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 14px;
+}
+
+html, body {
+  background-color: #4B352A; /* base background */
+  color: #CA7842; /* base text color */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(139, 92, 246, 0.4); /* brand-500 @ 40% */
+  color: #ffffff;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glass utility */
+.glass {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Container */
+.container-px {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Section spacing */
+.section-y {
+  @apply py-14 sm:py-20 lg:py-28;
+}
+
+/* Gradient ring utility for avatars/icons */
+.gradient-ring {
+  /* brand-500 #8b5cf6, accent #22d3ee */
+  background: conic-gradient(from 90deg at 50% 50%, #8b5cf6, #22d3ee, #8b5cf6);
+}
+

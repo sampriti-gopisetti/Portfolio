@@ -1,29 +1,70 @@
-# Sampriti Gopisetti — Portfolio (Static Website)
+# Sampriti Gopisetti — Portfolio
 
-This is a fully static, multi-page personal portfolio built with plain HTML, CSS, and JavaScript. It uses a custom 3D carousel (no external slider lib) and no charts. Designed to be hosted on GitHub Pages.
+A personal portfolio built with Next.js 14 (App Router), Tailwind CSS, Framer Motion, and Lucide icons.
 
-## Structure
-- `index.html` — Home
-- `about.html` — About with professional/personal summaries and skills
-- `projects.html` — Projects (custom 3D carousel)
-- `experience.html` — Experience (custom 3D carousel)
-- `qualifications.html` — Certifications & Leadership (custom 3D carousel)
-- `contact.html` — Contact info
-- `css/styles.css` — Global styles, responsive layout, animations
-- `js/script.js` — Custom 3D carousel and small UX enhancements
-- `assets/` — Put all images/logos here
+## Tech Stack
+- Next.js 14 (App Router)
+- React 18
+- Tailwind CSS
+- Framer Motion (animations)
+- Lucide (icons)
 
-## Local preview
-Open `index.html` in a browser. For best results with CDNs, you may use a local server (optional):
+## Getting Started
+Install dependencies and run the dev server:
 
-- If you have Python 3 installed (PowerShell or CMD):
-  - `python -m http.server 8000`
-  - Then open http://localhost:8000 in your browser.
+```bash
+npm install
+npm run dev
+```
 
-## Deploy to GitHub Pages
-1. Create a new GitHub repository and push this folder's contents.
-2. In the repo settings, enable GitHub Pages (Deploy from branch) and select the `main` branch and `/root`.
-3. Your site will be available at `https://<your-username>.github.io/<repo-name>/`.
+## Build and Static Export
+This project is configured for static export suitable for GitHub Pages.
+
+```bash
+npm run build
+```
+
+- Static files are generated into the `out/` folder.
+- Images are unoptimized (`images.unoptimized: true`) to work on GitHub Pages.
+- `basePath` and `assetPrefix` are set to `/Portfolio` for project pages (repo: `sampriti-gopisetti/Portfolio`).
+
+If deploying to a user/organization page (`<username>.github.io`), set `basePath` and `assetPrefix` to empty strings in `next.config.mjs`.
+
+## Deploy to GitHub Pages (Option A: gh-pages)
+Add a deploy script and publish `out/` to `gh-pages`:
+
+```bash
+npm i -D gh-pages
+```
+
+Add to `package.json`:
+
+```json
+{
+  "scripts": {
+    "deploy": "gh-pages -d out"
+  }
+}
+```
+
+Then:
+
+```bash
+npm run build
+npm run deploy
+```
+
+Enable GitHub Pages to serve from the `gh-pages` branch.
+
+## Deploy to GitHub Pages (Option B: GitHub Actions)
+Create `.github/workflows/deploy.yml` to build and deploy on push to `main`. This will publish the `out/` directory to `gh-pages`.
+
+## Notes
+- Background: `#4B352A`
+- Headings: `#B2CD9C`
+- Subtext under headings: `#F0F2BD`
+- Buttons: bg `#B2CD9C`, text `#4B352A`
+- Nav brand: `#B2CD9C`; nav links: `#F0F2BD`
 
 ## License
-You own your content. Libraries used via CDN follow their respective licenses.
+All rights reserved.
