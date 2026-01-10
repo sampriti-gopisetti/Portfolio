@@ -5,7 +5,7 @@ import './globals.css'
 const poppins = Poppins({ subsets: ['latin'], weight: ['300','400','500','600','700'] })
 
 export const metadata: Metadata = {
-  title: 'Sampriti | Classy & Colorful Portfolio',
+  title: 'Sampriti | Portfolio',
   description: 'A modern, animated portfolio built with Next.js, Tailwind CSS, and Framer Motion.',
 }
 
