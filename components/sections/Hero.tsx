@@ -44,7 +44,7 @@ export function Hero() {
         >
           <div className="absolute inset-0 rounded-full gradient-ring opacity-50 transition-transform duration-300 group-hover:scale-110" />
           <div className="relative overflow-hidden rounded-full h-full w-full ring-2 ring-[#F39EB6]/30 transition-all duration-300 group-hover:ring-4 group-hover:ring-[#F39EB6]/40">
-            <Image src="/images/sampriti-profile.jpg" alt="Sampriti Gopisetti" fill className="object-cover" />
+            <Image src="images/sampriti-profile.jpg" alt="Sampriti Gopisetti" fill className="object-cover" />
           </div>
         </motion.div>
       </Container>
