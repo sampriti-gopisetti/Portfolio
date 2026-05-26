@@ -3,6 +3,13 @@ export const projects = [
     slug: 'roleready',
     title: 'RoleReady',
     image: 'images/project-RoleReady.png',
+    summary:
+      'Built an AI onboarding platform that turns code, docs, tickets, and internal content into role-specific learning assets.',
+    highlights: [
+      'Searchable knowledge base powered by RAG and PGVector',
+      'Generates summaries, mind maps, infographics, and audio walkthroughs',
+      'FastAPI and Supabase backend for structured training content',
+    ],
     description:
       'Built an AI-powered onboarding and training platform that transforms organizational knowledge from code, docs, tickets, and internal content into searchable, role-specific learning assets. The system uses FastAPI, Supabase with PGVector, and model-driven generation to create structured summaries, mind maps, infographics, and audio walkthroughs, helping teams preserve institutional knowledge and accelerate new-hire productivity.',
     stack: ['Python', 'FastAPI', 'PostgreSQL', 'PGVector', 'Angular', 'TypeScript', 'Tailwind', 'Gemini', 'Ollama'],
@@ -13,6 +20,13 @@ export const projects = [
     slug: 'event-search',
     title: 'Event Search',
     image: 'images/project-event-search.png',
+    summary:
+      'Built a cross-platform event discovery suite for web and Android with shared API integrations and synced user favorites.',
+    highlights: [
+      'React and Kotlin apps connected to Ticketmaster, Spotify, and geocoding APIs',
+      'State management with React Query and State Flow',
+      'MongoDB and Data Store backed favorite synchronization',
+    ],
     description:
       'Constructed a cross-platform discovery suite featuring a React/TypeScript web app and a Kotlin/Jetpack Compose Android app, integrating Ticketmaster, Spotify, and GCP Geocoding APIs. Developed robust state management (React Query/State Flow) and persistent storage (MongoDB/Data Store) to sync user favorites, achieving a 90% satisfaction rate across 20+ peer evaluations.',
     stack: ['React', 'TypeScript', 'Kotlin', 'MongoDB', 'Android Studio'],
@@ -23,6 +37,13 @@ export const projects = [
     slug: 'promptquest',
     title: 'PromptQuest',
     image: 'images/project-promptquest.png',
+    summary:
+      'Created a gamified prompt-engineering trainer that scores input quality and guides users through progressively harder challenges.',
+    highlights: [
+      'Gemini-powered scoring and feedback loop',
+      'Detects vague prompts and improves context quality',
+      '10+ levels of increasing difficulty',
+    ],
     description:
       'Spearheaded a full-stack gamified progression system to train users in prompt engineering, utilizing Generative AI (Gemini) to evaluate user inputs against a custom quality-scoring algorithm. Launched an automated feedback loop that detects vague inputs and optimizes context windows, successfully gamifying the prompt optimization process for over 10 levels of increasing difficulty.',
     stack: ['TypeScript', 'Tailwind', 'Generative AI (Gemini)'],
@@ -33,6 +54,13 @@ export const projects = [
     slug: 'isl-interpreter',
     title: 'Indian Sign Language (ISL) Interpreter',
     image: 'images/project-isl-interpreter.png',
+    summary:
+      'Built a real-time ISL recognition platform that combines computer vision, deep learning, and a responsive web interface.',
+    highlights: [
+      'TensorFlow/Keras CNN-LSTM model with 92.8% accuracy',
+      'MediaPipe and OpenCV hand tracking pipeline',
+      'Springer-published and Best Project award recognition',
+    ],
     description:
       "Led the design of a TensorFlow/Keras CNN-LSTM for real-time ISL recognition, leveraging MediaPipe and OpenCV for hand tracking and achieving 92.8% accuracy (published by Springer). Architected a full-stack ISL platform with a Flask backend serving the AI model and a JavaScript frontend handling real-time video translation across 10+ interactive modules. This project was recognized with the 'Best Project' award for its innovation and impact.",
     stack: ['TensorFlow', 'Keras', 'Flask', 'OpenCV'],
@@ -44,6 +72,13 @@ export const projects = [
     slug: 'automail-ai',
     title: 'Automail AI',
     image: 'images/project-voice-email.png',
+    summary:
+      'Engineered a voice-command email assistant that classifies spoken instructions and sends messages through a guided workflow.',
+    highlights: [
+      'Naive Bayes classifier improved accuracy by 25%',
+      'Django backend integrated with SMTP and audio feedback',
+      'IEEE-published voice-to-email project',
+    ],
     description:
       'Engineered and optimized a Naive Bayes classifier for a voice-command email system, improving model accuracy by 25% and cutting training time by 30% through data analysis with Pandas and Scikit-learn (published by IEEE). Developed a full-stack voice-to-email application, architecting a Django backend to integrate the ML model and utilize Python\'s SMTP library for sending emails, and a JavaScript frontend for voice command capture and audio feedback via gTTS.',
     stack: ['Django', 'Python', 'Naive Bayes'],
@@ -55,6 +90,13 @@ export const projects = [
     slug: 'anpr',
     title: 'Vehicle Number Plate Detection',
     image: 'images/project-anpr.jpg',
+    summary:
+      'Built a number plate OCR pipeline that combines custom computer vision models with a full-stack API workflow.',
+    highlights: [
+      'Boosted Pytesseract accuracy to 82%',
+      'Keras and OpenCV recognition pipeline',
+      'IEEE-published and Smart India Hackathon recognized',
+    ],
     description:
       'Spearheaded a number plate OCR pipeline, boosting Pytesseract\'s accuracy to 82% on 1,000+ vehicles with a custom Keras model, earning recognition at the Smart India Hackathon (publication by IEEE). Launched a full-stack recognition application, creating a PHP backend on an Apache server to expose the Python computer vision system via an API and to visualize model performance graphs generated with Matplotlib.',
     stack: ['Python', 'Keras', 'OpenCV', 'PHP'],
@@ -66,6 +108,13 @@ export const projects = [
     slug: 'ecommerce',
     title: 'eCommerce Website',
     image: 'images/project-ecommerce.jpg',
+    summary:
+      'Designed and launched a clean eCommerce experience with account flows, product pages, and a simple full-stack backend.',
+    highlights: [
+      'React front end with MySQL and XAMPP backend',
+      'Secure sign-up, login, home, and product pages',
+      'Improved user engagement by 30%',
+    ],
     description:
       'Architected and launched a robust eCommerce website from the ground up, utilizing React for a dynamic front-end and MySQL with XAMPP for the back-end. I developed essential functionalities, including secure user sign-up and login, a home page, and individual product pages. By focusing on a clean and user-friendly UI/UX design, I achieved a 30% boost in user engagement.',
     stack: ['React', 'MySQL', 'XAMPP'],
@@ -76,6 +125,13 @@ export const projects = [
     slug: 'age-gender',
     title: 'Age and Gender Detection',
     image: 'images/project-age-gender.png',
+    summary:
+      'Built a real-time age and gender detection system using a convolutional model and live facial analysis.',
+    highlights: [
+      '85% classification accuracy',
+      'CNN trained with Keras, Dlib, and OpenCV',
+      'Dynamic content based on live facial analysis',
+    ],
     description:
       'Spearheaded the development of a real-time age and gender identification system, achieving 85% classification accuracy. I trained a Convolutional Neural Network (CNN) using Keras, Dlib, and OpenCV on a classified Kaggle dataset, enabling the final program to deliver dynamic and targeted content based on live facial analysis.',
     stack: ['Keras', 'OpenCV', 'Dlib'],
@@ -86,6 +142,13 @@ export const projects = [
     slug: 'stock-valuation',
     title: 'Stock Valuation',
     image: 'images/project-stock-valuation.png',
+    summary:
+      'Created a portfolio management platform with predictive analytics for future asset performance and visual decision support.',
+    highlights: [
+      'Linear regression-based forecasting module',
+      'Python and SQLite backend with responsive frontend',
+      'Validated 90% trend prediction accuracy',
+    ],
     description:
       'Created a comprehensive, full-stack portfolio management platform by developing a robust backend with Python and SQLite, and a responsive frontend using HTML, CSS, and JavaScript. The application\'s core feature is an integrated predictive analytics module that leverages linear regression algorithms to forecast future asset performance based on historical data. This system provides users with actionable insights through real-time data analysis and dynamic visualizations, empowering strategic investment planning with a validated trend prediction accuracy rate of 90%.',
     stack: ['Python', 'SQLite', 'Regression'],
@@ -96,6 +159,13 @@ export const projects = [
     slug: 'restaurant-reservation',
     title: 'Restaurant Reservation System',
     image: 'images/project-restaurant.png',
+    summary:
+      'Built a full-stack reservation platform that simplifies booking with a clean customer-first interface.',
+    highlights: [
+      'Java and SQL backend with a streamlined booking flow',
+      'Intuitive frontend focused on user experience',
+      'Reduced reservation time by 40%',
+    ],
     description:
       'Designed and launched a full-stack restaurant reservation platform, developing a robust backend with Java and SQL and a highly intuitive, easy-to-navigate frontend using HTML, CSS, and JavaScript. The project emphasized a clean and user-centric design, creating a seamless workflow that simplified the booking process for customers. This commitment to a superior user experience directly resulted in a 40% reduction in the average time required to secure a reservation.',
     stack: ['Java', 'SQL', 'JS', 'HTML', 'CSS'],
@@ -110,54 +180,90 @@ export const experience = [
     role: 'Associate Software Engineer Intern',
     period: '—',
     logo: 'images/logo-synamedia.png',
+    summary:
+      'Improved diagnostics and reporting workflows by automating backtrace analysis and operational reporting.',
+    highlights: [
+      'Cut bug identification time from 2–3 hours to under 10 minutes',
+      'Isolated network issues through backend log analysis with zero defects',
+      'Automated daily customer reports for faster data-driven decisions',
+    ],
     description:
       'Drove critical improvements in system diagnostics and operational efficiency through targeted automation and analysis. Engineered a backtrace automation tool that reduced bug identification from 2–3 hours to under 10 minutes, boosting team efficiency by 90%. Investigated complex network issues via backend log analysis, isolating root causes and validating system integrity with zero defects. Additionally, automated daily operational reports, transforming raw customer data into actionable insights for faster, data-driven decisions.',
-    highlights: [],
   },
   {
     company: 'Technodysis',
     role: 'RPA Intern',
     period: '—',
     logo: 'images/logo-technodysis.png',
+    summary:
+      'Built automation bots for banking reconciliation workflows and reduced manual processing overhead.',
+    highlights: [
+      'Deployed 10+ bots for EcoCash banking reconciliation workflows',
+      'Cut processing time by 95%',
+      'Reduced task completion time to under four minutes',
+    ],
     description:
       'Engineered a transformative balance checking and reconciliation solution for the African banking sector, which was successfully integrated into a live project with major partner EcoCash. By architecting and deploying over 10 automation bots in collaboration with key stakeholders, I spearheaded the automation of previously manual workloads, slashing processing time by 95%. This initiative reduced the average task completion time to under four minutes, significantly enhancing transactional accuracy, reliability, and overall operational efficiency.',
-    highlights: [],
   },
   {
     company: 'Lost Stories',
     role: 'AI Intern',
     period: '—',
     logo: 'images/logo-loststories.jpg',
+    summary:
+      'Improved a podcasting platform with semantic search and personalized recommendations.',
+    highlights: [
+      'Designed NLP-driven semantic search',
+      'Built a recommendation engine for historical stories',
+      'Made the content library more accessible and engaging',
+    ],
     description:
       'Enhanced a digital podcasting platform dedicated to preserving historical narratives by leveraging Natural Language Processing and machine learning to engineer end-to-end AI solutions. Designed and implemented core features, including an intuitive semantic search function and a personalized content recommendation engine, to optimize the user experience and make a vast library of traditional stories more accessible and engaging for a modern audience.',
-    highlights: [],
   },
   {
     company: 'Salesforce',
     role: 'Intern',
     period: '—',
     logo: 'images/logo-salesforce.png',
+    summary:
+      'Strengthened Salesforce operations with setup optimization and security reporting dashboards.',
+    highlights: [
+      'Improved data management efficiency by 30%',
+      'Reduced incident response times by 50%',
+      'Launched comprehensive security reports and dashboards',
+    ],
     description:
       'Enhanced Salesforce organizational efficiency by configuring setups and optimizing cloud performance, resulting in a 30% improvement in data management. A key achievement was the development and launch of comprehensive security reports and dashboards, which increased data visibility and critically reduced incident response times by 50%, bolstering the overall security framework.',
-    highlights: [],
   },
   {
     company: 'Contriver',
     role: 'Full Stack with ML & AI Intern',
     period: '—',
     logo: 'images/logo-contriver.jpeg',
+    summary:
+      'Built computer vision models and responsive interfaces with a strong focus on accuracy and UX.',
+    highlights: [
+      'Developed recognition systems reaching up to 98% accuracy',
+      'Used Python, TensorFlow, and Keras for model development',
+      'Recognized as Best Intern for impactful contributions',
+    ],
     description:
       'Engineered high-accuracy computer vision models and responsive web interfaces. Utilized Python, TensorFlow, and Keras to build recognition systems that achieved up to 98% accuracy, while also leveraging WordPress to create intuitive front-ends focused on an optimal user experience. In recognition of these impactful contributions, I was awarded the title of Best Intern.',
-    highlights: [],
   },
   {
     company: 'BNM Institute of Technology',
     role: 'Intern',
     period: '—',
     logo: 'images/BNMIT.png',
+    summary:
+      'Developed graphics and systems projects that combined interactive design with dependable application logic.',
+    highlights: [
+      'Built a Hangman game with OpenGL and Canva',
+      'Created a stadium management system with seat allocation',
+      'Implemented a secure Java bank management system',
+    ],
     description:
       'Developed a diverse portfolio of software applications, showcasing versatility in both graphics and system architecture. Engineered an interactive Hangman game using OpenGL and Canva, focusing on enhancing the user experience through dynamic graphics. Additionally, applied object-oriented principles in Java to build complex systems, including a stadium management application with an efficient seat allocation module and a robust bank management system designed for high reliability and secure data handling.',
-    highlights: [],
   },
 ]
 

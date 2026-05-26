@@ -20,10 +20,16 @@ function AboutContent() {
   return (
     <div className="space-y-4 text-[#F0F2BD]">
       <p>
-        <span className="font-semibold text-[#B2CD9C]">Professional Summary:</span> As a Master of Science in Computer Science candidate at University of Southern California, I am focused on building intelligent systems and scalable web applications. I bring a proven track record of academic excellence, including two undergraduate gold medals and a 9.84 CGPA, and practical experience driving major enhancements in automation and efficiency.
+        I’m an MSCS student at the University of Southern California focused on building AI-powered software systems, scalable backend services, and modern full-stack applications.
       </p>
       <p>
-        <span className="font-semibold text-[#B2CD9C]">Personal Summary:</span> My problem-solving is driven by a balance of technical and creative pursuits. Outside of engineering, my training in the disciplined arts of Bharatanatyam and Carnatic music has cultivated deep focus and dedication. I honed my collaboration and leadership skills by heading college festivals and design clubs, and I have actively contributed to my community through the National Service Scheme (NSS) and other service-oriented clubs.
+        My work spans GenAI, semantic retrieval, backend engineering, and machine learning systems, with projects involving RAG workflows, vector embeddings, real-time inference pipelines, and AI orchestration using technologies such as FastAPI, PostgreSQL, TensorFlow, React, Docker, and Gemini AI.
+      </p>
+      <p>
+        I enjoy building practical systems that turn complex workflows and unstructured information into clean, reliable, and user-friendly products.
+      </p>
+      <p>
+        Outside engineering, I enjoy Bharatanatyam, Carnatic music, community service initiatives, and collaborative leadership experiences that help me stay creative and grounded.
       </p>
     </div>
   )

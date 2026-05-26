@@ -23,7 +23,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-[#F0F2BD] max-w-prose"
           >
-            Computer Science graduate specializing in Artificial Intelligence and Machine Learning, with a strong foundation in full-stack development and hands-on experience building and deploying predictive models. An adaptable and results-driven problem-solver.
+            MSCS student at USC focused on building AI-powered software systems, scalable backend services, and modern full-stack applications.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
