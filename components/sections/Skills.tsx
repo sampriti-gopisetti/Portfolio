@@ -12,11 +12,14 @@ export function Skills() {
       <div className="space-y-5">
         {[
           { key: 'languages', label: 'Languages' },
-          { key: 'web', label: 'Web' },
-          { key: 'ai_ml', label: 'AI/ML' },
-          { key: 'data_science', label: 'Data Science' },
+          { key: 'frameworks', label: 'Frameworks' },
+          { key: 'databases', label: 'Databases' },
           { key: 'cloud_devops', label: 'Cloud & DevOps' },
-          { key: 'automation_tools', label: 'Automation Tools' },
+          { key: 'ml_frameworks', label: 'ML Frameworks' },
+          { key: 'gen_ai_nlp', label: 'Generative AI & NLP' },
+          { key: 'computer_vision', label: 'Computer Vision' },
+          { key: 'mlops_backend', label: 'MLOps & Backend' },
+          { key: 'tools_technologies', label: 'Tools & Technologies' },
         ].map((cat, idx) => (
           <motion.div key={cat.key}
             initial={{ opacity: 0, y: 14 }}

@@ -1,5 +1,15 @@
 export const projects = [
   {
+    slug: 'roleready',
+    title: 'RoleReady',
+    image: 'images/project-RoleReady.png',
+    description:
+      'Built an AI-powered onboarding and training platform that transforms organizational knowledge from code, docs, tickets, and internal content into searchable, role-specific learning assets. The system uses FastAPI, Supabase with PGVector, and model-driven generation to create structured summaries, mind maps, infographics, and audio walkthroughs, helping teams preserve institutional knowledge and accelerate new-hire productivity.',
+    stack: ['Python', 'FastAPI', 'PostgreSQL', 'PGVector', 'Angular', 'TypeScript', 'Tailwind', 'Gemini', 'Ollama'],
+    repo: 'https://github.com/sampriti-gopisetti/RoleReady',
+    demo: undefined,
+  },
+  {
     slug: 'event-search',
     title: 'Event Search',
     image: 'images/project-event-search.png',
@@ -15,7 +25,7 @@ export const projects = [
     image: 'images/project-promptquest.png',
     description:
       'Spearheaded a full-stack gamified progression system to train users in prompt engineering, utilizing Generative AI (Gemini) to evaluate user inputs against a custom quality-scoring algorithm. Launched an automated feedback loop that detects vague inputs and optimizes context windows, successfully gamifying the prompt optimization process for over 10 levels of increasing difficulty.',
-    stack: [ 'TypeScript', 'Tailwind', 'Generative AI (Gemini)'],
+    stack: ['TypeScript', 'Tailwind', 'Generative AI (Gemini)'],
     repo: 'https://github.com/sampriti-gopisetti/PromptQuest',
     demo: undefined,
   },
@@ -24,7 +34,7 @@ export const projects = [
     title: 'Indian Sign Language (ISL) Interpreter',
     image: 'images/project-isl-interpreter.png',
     description:
-      "Led the design of a TensorFlow/Keras CNN-LSTM for real-time ISL recognition, leveraging MediaPipe and OpenCV for hand tracking and achieving 92.8% accuracy (published by Springer). Architected a full-stack ISL platform with a Flask backend serving the AI model and a JavaScript frontend handling real-time video translation across 10+ interactive modules.This project was recognized with the 'Best Project' award for its innovation and impact.",
+      "Led the design of a TensorFlow/Keras CNN-LSTM for real-time ISL recognition, leveraging MediaPipe and OpenCV for hand tracking and achieving 92.8% accuracy (published by Springer). Architected a full-stack ISL platform with a Flask backend serving the AI model and a JavaScript frontend handling real-time video translation across 10+ interactive modules. This project was recognized with the 'Best Project' award for its innovation and impact.",
     stack: ['TensorFlow', 'Keras', 'Flask', 'OpenCV'],
     paper: true,
     repo: 'https://github.com/sampriti-gopisetti/Indian-Sign-Language-Interpreter-Tutor',
@@ -35,7 +45,7 @@ export const projects = [
     title: 'Automail AI',
     image: 'images/project-voice-email.png',
     description:
-      'Engineered and optimized a Naive Bayes classifier for a voice-command email system, improving model accuracy by 25% and cutting training time by 30% through data analysis with Pandas and Scikit-learn (published by IEEE). Developed a full-stack voice-to-email application, architecting a Django backend to integrate the ML model and utilize Pythons SMTP library for sending emails, and a JavaScript frontend for voice command capture and audio feedback via gTTS.',
+      'Engineered and optimized a Naive Bayes classifier for a voice-command email system, improving model accuracy by 25% and cutting training time by 30% through data analysis with Pandas and Scikit-learn (published by IEEE). Developed a full-stack voice-to-email application, architecting a Django backend to integrate the ML model and utilize Python\'s SMTP library for sending emails, and a JavaScript frontend for voice command capture and audio feedback via gTTS.',
     stack: ['Django', 'Python', 'Naive Bayes'],
     paper: true,
     repo: 'https://github.com/sampriti-gopisetti/Automated-Voice-Email-Generator',
@@ -46,7 +56,7 @@ export const projects = [
     title: 'Vehicle Number Plate Detection',
     image: 'images/project-anpr.jpg',
     description:
-      'Spearheaded a number plate OCR pipeline, boosting Pytesseracts accuracy to 82% on 1,000+ vehicles with a custom Keras model, earning recognition at the Smart India Hackathon (publication by IEEE). Launched a full-stack recognition application, creating a PHP backend on an Apache server to expose the Python computer vision system via an API and to visualize model performance graphs generated with Matplotlib.',
+      'Spearheaded a number plate OCR pipeline, boosting Pytesseract\'s accuracy to 82% on 1,000+ vehicles with a custom Keras model, earning recognition at the Smart India Hackathon (publication by IEEE). Launched a full-stack recognition application, creating a PHP backend on an Apache server to expose the Python computer vision system via an API and to visualize model performance graphs generated with Matplotlib.',
     stack: ['Python', 'Keras', 'OpenCV', 'PHP'],
     paper: true,
     repo: 'https://github.com/sampriti-gopisetti/Automated-Number-Plate-Detection',
@@ -77,7 +87,7 @@ export const projects = [
     title: 'Stock Valuation',
     image: 'images/project-stock-valuation.png',
     description:
-      'Created a comprehensive, full-stack portfolio management platform by developing a robust backend with Python and SQLite, and a responsive frontend using HTML, CSS, and JavaScript. The applications core feature is an integrated predictive analytics module that leverages linear regression algorithms to forecast future asset performance based on historical data. This system provides users with actionable insights through real-time data analysis and dynamic visualizations, empowering strategic investment planning with a validated trend prediction accuracy rate of 90%.',
+      'Created a comprehensive, full-stack portfolio management platform by developing a robust backend with Python and SQLite, and a responsive frontend using HTML, CSS, and JavaScript. The application\'s core feature is an integrated predictive analytics module that leverages linear regression algorithms to forecast future asset performance based on historical data. This system provides users with actionable insights through real-time data analysis and dynamic visualizations, empowering strategic investment planning with a validated trend prediction accuracy rate of 90%.',
     stack: ['Python', 'SQLite', 'Regression'],
     repo: 'https://github.com/sampriti-gopisetti/Stock-Prediction',
     demo: undefined,
@@ -152,23 +162,27 @@ export const experience = [
 ]
 
 export const skills = [
-  // Languages
-  'Java', 'Python', 'C', 'C++', 'SQL', 'JavaScript', 'HTML', 'CSS', 'PHP', 'MongoDB',
-  // Frameworks & Libraries
-  'React', 'Node.js', 'Django', 'WordPress', 'Pandas', 'NumPy', 'Matplotlib', 'OpenCV', 'Keras', 'Playwright',
-  // Tools & Services
-  'Salesforce', 'AWS', 'Azure', 'Power BI', 'Power Automate', 'UiPath',
-  // OS
-  'Windows', 'Linux',
+  'Python', 'Java', 'C++', 'JavaScript', 'TypeScript', 'SQL', 'HTML/CSS',
+  'React', 'Angular', 'Node.js', 'Django', 'Tailwind CSS',
+  'PostgreSQL', 'MongoDB', 'Supabase', 'PGVector',
+  'AWS', 'Azure', 'Docker', 'GitHub Actions', 'Linux', 'CI/CD',
+  'PyTorch', 'TensorFlow', 'Keras', 'Scikit-learn', 'Hugging Face',
+  'Gemini AI', 'LLM APIs', 'RAG', 'Vector Embeddings', 'LangChain',
+  'OpenCV', 'MediaPipe', 'Pytesseract', 'GANs',
+  'FastAPI', 'Flask', 'REST APIs', 'JWT Authentication',
+  'Git', 'Playwright', 'Jira', 'Power BI', 'Power Automate',
 ]
 
 export const skillsByCategory = {
-  languages: ['Python', 'Java', 'C', 'C++', 'C#', 'JavaScript', 'TypeScript', 'PHP', 'SQL'],
-  web: ['React.js', 'Node.js', 'Django', 'Flask', 'Vite', 'Tailwind CSS', 'WordPress'],
-  ai_ml: ['PyTorch', 'TensorFlow', 'Keras', 'Scikit-learn', 'Hugging Face', 'OpenCV', 'MediaPipe', 'Generative AI'],
-  data_science: ['NumPy', 'Pandas', 'Matplotlib', 'PostgreSQL', 'MongoDB'],
-  cloud_devops: ['AWS', 'Azure', 'Docker', 'Git', 'Grafana', 'Linux'],
-  automation_tools: ['Playwright', 'Power BI', 'Power Automate', 'UiPath', 'Jira', 'Salesforce'],
+  languages: ['Python', 'Java', 'C++', 'JavaScript', 'TypeScript', 'SQL', 'HTML', 'CSS'],
+  frameworks: ['React', 'Angular', 'Node.js', 'Django', 'Tailwind CSS'],
+  databases: ['PostgreSQL', 'MongoDB', 'Supabase', 'PGVector'],
+  cloud_devops: ['AWS', 'Azure', 'Docker', 'GitHub Actions', 'Linux', 'CI/CD'],
+  ml_frameworks: ['PyTorch', 'TensorFlow', 'Keras', 'Scikit-learn', 'Hugging Face'],
+  gen_ai_nlp: ['Gemini AI', 'LLM APIs', 'RAG', 'Vector Embeddings', 'LangChain'],
+  computer_vision: ['OpenCV', 'MediaPipe', 'Pytesseract', 'GANs'],
+  mlops_backend: ['FastAPI', 'Flask', 'REST APIs', 'JWT Authentication'],
+  tools_technologies: ['Git', 'Playwright', 'Jira', 'Power BI', 'Power Automate'],
 }
 
 export const contact = {
