@@ -298,8 +298,7 @@ export const contact = {
   social: {
     linkedin: 'https://www.linkedin.com/in/sampritigopisetti25/',
     github: 'https://github.com/sampriti-gopisetti',
-    resumeSWE: 'files/Sampriti_Gopisetti_SWE.pdf',
-    resumeAIML: 'files/Sampriti_Gopisetti_AIML.pdf',
+    resume: 'files/Sampriti_Gopisetti_Resume.pdf',
   }
 }
 

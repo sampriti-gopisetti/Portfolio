@@ -24,8 +24,7 @@ export function Contact() {
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <Button href={contact.social.linkedin} variant="secondary" className="gap-2"><Linkedin className="h-4 w-4" />LinkedIn</Button>
           <Button href={contact.social.github} variant="secondary" className="gap-2"><Github className="h-4 w-4" />GitHub</Button>
-          <Button href={contact.social.resumeSWE} variant="secondary" className="gap-2"><FileText className="h-4 w-4" />Resume (SWE)</Button>
-          <Button href={contact.social.resumeAIML} variant="secondary" className="gap-2"><FileText className="h-4 w-4" />Resume (AI/ML)</Button>
+          <Button href={contact.social.resume} variant="secondary" className="gap-2"><FileText className="h-4 w-4" />Resume</Button>
         </div>
       </Card>
     </Section>
